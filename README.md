@@ -1,4 +1,4 @@
-# chat-for-bi
+# bi-chat
 
 ## Project setup
 ```
