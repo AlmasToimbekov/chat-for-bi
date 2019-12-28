@@ -12,21 +12,21 @@
                         <v-card-text class="headline font-weight-bold">
                             <div v-html="video.description"></div>
                         </v-card-text>
-                        <v-img
-                                :src="video.thumbnail"
-                        ></v-img>
                     </v-card>
                 </router-link>
             </div>
         </div>
+        <chat-form></chat-form>
     </div>
 </template>
 
 <script>
     // @ is an alias to /src
+    import ChatForm from '@/components/ChatForm.vue'
     export default {
         name: 'home',
         components: {
+            ChatForm
         },
         data() {
             return {
