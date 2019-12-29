@@ -15,7 +15,7 @@ export default new Vuex.Store({
                     },
                     {
                         id: 2,
-                        name: 'Medved',
+                        name: 'User',
                         text: 'you are not my friend'
                     }
                 ]
@@ -24,7 +24,7 @@ export default new Vuex.Store({
                 id: 2, messages: [
                     {
                         id: 1,
-                        name: 'Nurik',
+                        name: 'User',
                         text: 'Hello, father'
                     },
                     {
@@ -39,11 +39,11 @@ export default new Vuex.Store({
             {id: 1, name: 'Almas'},
             {id: 2, name: 'Medved'},
         ],
-        selectedChat: ''
+        selectedChat: 1
     },
     mutations: {
-        addMessage (state, id, message) {
-            state.messages.find(messages => messages.id === id).messages.push(message)
+        addMessage (state, message) {
+            state.messages.find(messages => messages.id === state.selectedChat).messages.push(message)
         }
     },
     actions: {},

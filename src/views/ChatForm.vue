@@ -11,13 +11,13 @@
         }),
         methods: {
             send() {
-                let selectedId = this.$store.state.selectedChat
                 let newMessage = {
-                        id: this.$store.state.messages.length + 1,
+                        id: Date.now(),
                         name: 'User',
                         text: this.text
                     }
-                this.$store.state.messages.find(chat => chat.id === selectedId).messages.push(newMessage)
+                this.$store.commit('addMessage', newMessage)
+                this.text = ''
             }
         }
     }

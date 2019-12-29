@@ -26,7 +26,7 @@
     export default {
         computed: {
             messages() {
-                return this.$store.state.messages.find(msg => msg.id === this.$route.params.id).messages
+                return this.$store.state.messages.find(msg => msg.id === this.$store.state.selectedChat).messages
             }
         }
     }

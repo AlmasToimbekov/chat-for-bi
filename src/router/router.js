@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import MessageWatch from '../views/MessageWatch'
 
 Vue.use(VueRouter)
@@ -8,14 +7,9 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/msg',
     name: 'msg-watch',
     component: MessageWatch,
-    params: true
+    params: false
   }
 ]
 
