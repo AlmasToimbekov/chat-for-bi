@@ -4,8 +4,31 @@
             <v-list subheader>
                 <v-subheader>List of contacts</v-subheader>
 
+<!--                <div v-for="msg in messages" v-bind:key="msg.name" >-->
+<!--                    <router-link :to="{ name: 'msg-watch', params: { id: msg.id }}">-->
+<!--                        <v-card hover-->
+<!--                                width="300px"-->
+<!--                                class="ma-2">-->
+<!--                            <v-card-title class="headline mb-1">{{ msg.name }}</v-card-title>-->
+<!--                            <v-card-text class="headline font-weight-bold">-->
+<!--                                <div v-html="msg.description"></div>-->
+<!--                            </v-card-text>-->
+<!--                        </v-card>-->
+<!--                    </router-link>-->
+<!--                </div>-->
+
                 <v-list-item
-                        v-for="item in chats" :key="item.id" @click.prevent>
+                        v-for="item in chats" :key="item.id" :to="{ name: 'msg-watch', params: { id: item.id }}">
+<!--                                <v-card hover-->
+<!--                                        width="300px"-->
+<!--                                        class="ma-2">-->
+<!--                                    <v-card-title class="headline mb-1">{{ msg.name }}</v-card-title>-->
+<!--                                    <v-card-text class="headline font-weight-bold">-->
+<!--                                        <div v-html="msg.description"></div>-->
+<!--                                    </v-card-text>-->
+<!--                                </v-card>-->
+
+
                     <!--                    <v-list-item-avatar>-->
                     <!--                        <v-img :src="item.avatar"></v-img>-->
                     <!--                    </v-list-item-avatar>-->
