@@ -10,8 +10,8 @@
 </template>
 
 <script>
-    import Chats from '@/components/Chats.vue'
-    import ChatForm from '@/components/ChatForm.vue'
+    import Chats from '@/views/Chats.vue'
+    import ChatForm from '@/views/ChatForm.vue'
     export default {
         name: 'App',
         data: () => ({
