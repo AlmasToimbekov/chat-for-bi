@@ -11,8 +11,13 @@
         }),
         methods: {
             send() {
-                console.log("Sending: " + this.text)
-                this.text = ''
+                let selectedId = this.$store.state.selectedChat
+                let newMessage = {
+                        id: this.$store.state.messages.length + 1,
+                        name: 'User',
+                        text: this.text
+                    }
+                this.$store.state.messages.find(chat => chat.id === selectedId).messages.push(newMessage)
             }
         }
     }

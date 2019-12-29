@@ -41,7 +41,11 @@ export default new Vuex.Store({
         ],
         selectedChat: ''
     },
-    mutations: {},
+    mutations: {
+        addMessage (state, id, message) {
+            state.messages.find(messages => messages.id === id).messages.push(message)
+        }
+    },
     actions: {},
     modules: {}
 })
