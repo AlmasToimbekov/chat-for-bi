@@ -3,8 +3,8 @@
         <v-navigation-drawer app v-model="drawer">
             <v-list subheader>
                 <v-subheader>List of contacts</v-subheader>
-
-                <v-list-item v-for="item in chats" :key="item.id" v-on:click="select(item.id)">
+                <input type="text" v-model="search" placeholder="Find chat" />
+                <v-list-item v-for="item in filteredChats" :key="item.id" v-on:click="select(item.id)">
                     <v-list-item-content>
                         <v-list-item-title v-text="item.name"/>
                     </v-list-item-content>
@@ -31,7 +31,8 @@
     export default {
         data() {
             return {
-                drawer: true
+                drawer: true,
+                search: '',
             }
         },
         methods: {
@@ -46,6 +47,11 @@
             },
             selectedChat() {
                 return this.$store.state.selectedChat
+            },
+            filteredChats() {
+                return this.chats.filter((chat) => {
+                    return chat.name.match(this.search)
+                })
             }
         }
     }
